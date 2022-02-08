@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rychlost reakce</title>
+    <button id="but1" onclick="klikgreen();return false;">Počkej na zelené světlo</button>
+</head>
+<body>
+    <script>
+        function rychrek() {
+        setTimeout(
+            function() {
+                document.getElementById("but1").style.backgroundColor = "green";
+            }, 5000);
+        }
+        function klikgreen(){
+
+        }
+        rychrek()
+    </script>
+    <style>
+        button {
+            visibility: visible;
+            background-color: rgb(168, 9, 9);
+            border: 0;
+            border-style: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            height: 1080px;
+            font-size: 20px;
+        }
+        button:active{
+            background:rgb(80, 0, 0);
+        }
+    </style>
+</body>
+</html>
