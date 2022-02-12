@@ -5,36 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rychlost reakce</title>
-    <button id="but1" onclick="klikgreen();return false;">Počkej na zelené světlo</button>
+    <button type="button" id="but1" onclick="start();return false;">Zmáčkni pro zapnutí zkoušky</button>
+    <div><button type="button" id="but2" onclick="start();return false;">Zpět na start</button></div>
 </head>
 <body>
     <script>
-        function rychrek() {
-        setTimeout(
+        function game(){
+            setTimeout(
             function() {
-                document.getElementById("but1").style.backgroundColor = "green";
+                document.getElementById("but1").style.backgroundColor = "#68bd46";
+                document.getElementById("but1").innerHTML="KLIK!"
             }, 5000);
         }
-        function klikgreen(){
-
+        function start(){
+            document.getElementById("but1").style.backgroundColor = "#f54842";  
+            document.getElementById("but1").innerHTML="POČKEJ NA ZELENOU!"
+            game()
         }
-        rychrek()
     </script>
     <style>
         button {
             visibility: visible;
-            background-color: rgb(168, 9, 9);
+            background-color: rgb(63, 109, 153);
             border: 0;
             border-style: none;
             display: block;
             margin: 10px 0;
             padding: 10px;
-            width: 100%;
-            height: 1080px;
+            width: 85%;
+            height: 700px;
             font-size: 20px;
-        }
-        button:active{
-            background:rgb(80, 0, 0);
         }
     </style>
 </body>
