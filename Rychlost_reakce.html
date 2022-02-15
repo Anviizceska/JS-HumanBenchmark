@@ -12,18 +12,24 @@
         function game(){
             setTimeout(
             function() {
+                let timer_start = new Date().getMilliseconds();
                 document.getElementById("but1").style.backgroundColor = "#68bd46";
                 document.getElementById("but1").innerHTML="KLIK!";
+
                 const element = document.getElementById('but1');
                 element.addEventListener("click", () => {
-                    let cas_od_kliknuti = 254;
-                    let prumer_dalsich = 201;
+
+                    let timer_end = new Date().getMilliseconds();
+                    let cas_od_kliknuti = timer_end - timer_start;
                     let prevod_na_sekundy = prevod();
+                    if(cas_od_kliknuti < 0){
+                        cas_od_kliknuti = NaN + " CHYBA C1! : Restartuj stránku a, prosím, zkus to znovu!";
+                    }
                     document.write('Čas: '+cas_od_kliknuti+'ms. <br>Pro reset zkoušky, restartuj stránku!');
-                    document.write('<br>Průměrný čas dalších: ');
                     document.write('<br>Převod na sekundy: ' + prevod_na_sekundy + 's.');
-                    document.write("<br>");
-                    document.write("<br>");
+                    document.write("<br>(Vývojář) timer_start -> "+timer_start);
+                    document.write("<br>(Vývojář) timer_end -> "+timer_end);
+                    document.write("<br>(Vývojář) chybac1 -> timer < 0");
                     document.getElementById("but1").style.backgroundColor = "#f54842";
                 });
             }, 5000);
@@ -36,7 +42,7 @@
             }
         }
         function prevod(){
-            return 2;
+            return NaN;
         }
     </script>
     <style>
