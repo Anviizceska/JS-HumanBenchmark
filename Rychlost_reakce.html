@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rychlost reakce</title>
     <button type="button" id="but1" onclick="start();return false;">Zmáčkni pro zapnutí zkoušky</button>
+    <form action="1Rozcestník.html">
+        <input type="submit" value="Zpět na rozcestník"/>
+    </form>
 </head>
 <body>
     <script>
         function game(){
+            function getRndInteger(min, max) {
+                return Math.floor(Math.random() * (max - min) ) + min;
+            }
+            random_time = getRndInteger(1000, 6000);
             setTimeout(
             function() {
                 let timer_start = new Date().getMilliseconds();
@@ -21,18 +28,23 @@
 
                     let timer_end = new Date().getMilliseconds();
                     let cas_od_kliknuti = timer_end - timer_start;
-                    let prevod_na_sekundy = prevod();
+
+                    // TODO: Jestliže je timer_end < timer_start, odečítej hodnoty od sebe naopak a zruš
+                    // chybu chybac1.
+
                     if(cas_od_kliknuti < 0){
                         cas_od_kliknuti = NaN + " CHYBA C1! : Restartuj stránku a, prosím, zkus to znovu!";
                     }
                     document.write('Čas: '+cas_od_kliknuti+'ms. <br>Pro reset zkoušky, restartuj stránku!');
-                    document.write('<br>Převod na sekundy: ' + prevod_na_sekundy + 's.');
+                    document.write("<br>Udělej si těch testů víc a zprůměruj si výsledky cca v rozmezí 100-500ms, prozatím to není moc přesný.");
+                    document.write("<br>");
                     document.write("<br>(Vývojář) timer_start -> "+timer_start);
                     document.write("<br>(Vývojář) timer_end -> "+timer_end);
+                    document.write("<br>(Vývojář) random_time -> "+ random_time);
                     document.write("<br>(Vývojář) chybac1 -> timer < 0");
                     document.getElementById("but1").style.backgroundColor = "#f54842";
                 });
-            }, 5000);
+            }, random_time);
         }
         function start(){
             if( document.getElementById("but1").style.backgroundColor = "#3f6d99"){
@@ -41,22 +53,29 @@
                 game();
             }
         }
-        function prevod(){
-            return NaN;
-        }
     </script>
     <style>
+        input[type=submit]{
+            background-color: rgb(219, 207, 207);
+            border-radius: 20px;
+            border-style: groove;
+        }
+        body {
+            background-color: rgb(172, 166, 166);
+        }
         button {
             visibility: visible;
             background-color: rgb(63, 109, 153);
-            border: 0;
-            border-style: none;
+            border-radius: 20px;
+            border-style: groove;
             display: block;
             margin: 10px 0;
             padding: 10px;
             width: 85%;
             height: 700px;
-            font-size: 20px;
+            font-size: 50px;
+            color: rgb(255, 255, 255);
+
         }
     </style>
 </body>
