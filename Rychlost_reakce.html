@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rychlost reakce</title>
     <button type="button" id="but1" onclick="start();return false;">Zmáčkni pro zapnutí zkoušky</button>
-    <div><button type="button" id="but2" onclick="start();return false;">Zpět na start</button></div>
 </head>
 <body>
     <script>
@@ -14,13 +13,30 @@
             setTimeout(
             function() {
                 document.getElementById("but1").style.backgroundColor = "#68bd46";
-                document.getElementById("but1").innerHTML="KLIK!"
+                document.getElementById("but1").innerHTML="KLIK!";
+                const element = document.getElementById('but1');
+                element.addEventListener("click", () => {
+                    let cas_od_kliknuti = 254;
+                    let prumer_dalsich = 201;
+                    let prevod_na_sekundy = prevod();
+                    document.write('Čas: '+cas_od_kliknuti+'ms. <br>Pro reset zkoušky, restartuj stránku!');
+                    document.write('<br>Průměrný čas dalších: ');
+                    document.write('<br>Převod na sekundy: ' + prevod_na_sekundy + 's.');
+                    document.write("<br>");
+                    document.write("<br>");
+                    document.getElementById("but1").style.backgroundColor = "#f54842";
+                });
             }, 5000);
         }
         function start(){
-            document.getElementById("but1").style.backgroundColor = "#f54842";  
-            document.getElementById("but1").innerHTML="POČKEJ NA ZELENOU!"
-            game()
+            if( document.getElementById("but1").style.backgroundColor = "#3f6d99"){
+                document.getElementById("but1").style.backgroundColor = "#f54842";  
+                document.getElementById("but1").innerHTML="POČKEJ NA ZELENOU!";
+                game();
+            }
+        }
+        function prevod(){
+            return 2;
         }
     </script>
     <style>
