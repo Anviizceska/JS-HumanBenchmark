@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rychlost kliknutí</title>
+</head>
+<body>
+    <div class="text1">Neklikej červené kruhy!<br>Co nejrychleji klikni na zjevující se kroužkierung</div>
+    <div class="circle"></div>
+    <div class="straight_line1"></div>
+    <div class="straight_line2"></div>
+    <button type="button" onclick="ahoj();return false;" class="">
+
+    <script>
+        function ahoj(){
+            setTimeout(
+                function() {
+                    alert("Test")
+                }, 1000);
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: black;
+        }
+        .straight_line1 {
+            position: fixed;
+            top: 50%;
+            transform: translate(-50%);
+            border:1px solid rgb(255, 255, 255); 
+            height:0px;
+            width:3800px;
+        }
+        .straight_line2 {
+            position: fixed;
+            left: 50%;
+            transform: translate(-50%);
+            border:1px solid rgb(255, 255, 255); 
+            height:3800px;
+            width:0px;
+        }
+        .circle {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height:80px;
+            width:80px;
+            background:red;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            
+        }
+        .text1 {
+            position: absolute;
+            font-size: 20;
+            color: aliceblue;
+            font-family: monospace;
+        }
+
+
+    </style>
+</body>
+</html>
+
