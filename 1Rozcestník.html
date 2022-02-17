@@ -8,10 +8,41 @@
 </head>
 <body>
     <form action="Rychlost_reakce.html">
-        <input type="submit" value="Rychlost reakce"/>
+        <input type="submit" value="Rychlost reakce" class="rr"/>
     </form>
+    <form action="Rychlost_kliknutí.html">
+        <input type="submit" value="Rychlost kliknutí" class="rk"/>
+    </form>
+    <input type="submit" value=" " class="prazdno"/>
+    <input type="submit" value=" " class="prazdno"/>
+    <input type="submit" value=" " class="prazdno"/>
+    <input type="submit" value=" " class="prazdno"/>
+    <input type="submit" value=" " class="prazdno"/>
+    <input type="submit" value=" " class="prazdno"/>
     <style>
-        input {
+        .prazdno {
+            visibility: visible;
+            background-color: rgb(71, 99, 75);
+            border-radius: 20px;
+            border-style: groove;
+            border-style: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            height: 100px;
+            font-size: 20px;
+            opacity: 10%;
+        }
+        .prazdno:hover {
+            background-color: rgb(42, 58, 45);
+            border-radius: 25px;
+        }
+        body {
+            background-color: beige;
+        }
+        .rr {
+            color: rgb(255, 255, 255);
             visibility: visible;
             background-color: rgb(136, 120, 120);
             border-radius: 20px;
@@ -24,6 +55,33 @@
             height: 100px;
             font-size: 20px;
         }
+        .rr:hover{
+            background-color: rgb(119, 106, 106);
+            border-radius: 25px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        .rk {
+            color: rgb(255, 255, 255);
+            visibility: visible;
+            background-color: rgb(102, 102, 121);
+            border-radius: 20px;
+            border-style: groove;
+            border-style: none;
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            height: 100px;
+            font-size: 20px;
+        }
+        .rk:hover{
+            background-color: rgb(89, 89, 105);
+            border-radius: 25px;
+            font-size: 25px;
+            font-weight: bold;
+        }
+        
     </style>
 </body>
 </html>
